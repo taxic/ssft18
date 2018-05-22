@@ -14,7 +14,7 @@ module Prelude where
 -- Natural numbers as our first example of
 -- an inductive data type.
 
-data ℕ : Set where
+data ℕ : Set where -- set-input-method \bN
   zero : ℕ
   suc  : (n : ℕ) → ℕ
 
@@ -51,7 +51,8 @@ infixr 4 _⊎_
 data False : Set where
 
 ⊥-elim : False → {A : Set} → A
-⊥-elim = {!!}
+⊥-elim ()
+
 
 -- C-c C-SPC give
 -- C-c C-, show hypotheses and goal
@@ -89,12 +90,13 @@ infixr 5 _×_
 record True : Set where
 
 test : True
-test = {!!}
+test = record {}
 
--- Example: distributivity  A ∧ (B ∨ C) → (A ∧ B) ∨ (A ∧ C)
+-- example: distributivity  a ∧ (b ∨ c) → (a ∧ b) ∨ (a ∧ c)
 
-dist : ∀{A B C : Set} → A × (B ⊎ C) → (A × B) ⊎ (A × C)
-dist = {!!}
+dist : ∀{a b c : Set} → a × (b ⊎ c) → (a × b) ⊎ (a × c)
+dist (a , inl b) = inl (a , b)
+dist (a , inr c) = inr (a , c)
 
 -- Relations
 
@@ -119,7 +121,10 @@ Rel A = A → A → Set
 -- Less-or-equal on natural numbers
 
 _≤_ : Rel ℕ
-x  ≤ y     = {!!}
+zero ≤ zero = True
+zero ≤ suc y = True
+suc x ≤ zero = False
+suc x ≤ suc y = x ≤ y
 
 -- C-c C-l load
 -- C-c C-c case split
