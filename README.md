@@ -7,6 +7,8 @@ Summer School for Formal Techniques
 - [Tutorial](http://www.lix.polytechnique.fr/~lengrand/SSFT2018/)
 - Run `coqide &` and open `coq/*.v` files for exercises. 
 
+## Agda
+
 ## Rosette (presented by [Emina Torlak](https://homes.cs.washington.edu/~emina/index.html))
 - Steps to run
   - Run `drracket` to open DrRacket window.
@@ -21,3 +23,16 @@ Summer School for Formal Techniques
   - `shallow.rkt`
   - `deep.rkt`
 - slides: [01](rosette/ssft18L01.pdf), [02](rosette/ssft18L02.pdf)
+
+## [CVC4](http://cvc4.cs.stanford.edu/web/) ([code](https://github.com/CVC4/CVC4))
+> CVC4 is an efficient open-source automatic theorem prover for satisfiability modulo theories (SMT) problems.
+
+## Racket
+
+## [Idris](https://www.idris-lang.org/)
+
+## Haskell
+### State Monad
+- [Tutorial](https://wiki.haskell.org/State_Monad)
+
+## [Clojure](https://clojure.org/)
