@@ -12,8 +12,12 @@ Summer School for Formal Techniques
   - Run `drracket` to open DrRacket window.
   - Open file `sudoku.rkt` and click `Run`.
   - Type `(show (generate-puzzle))` and Enter. It will generate a *minimal* Sudoku puzzle.
+  - Open file `deep.rkt` and click `Run`.
+  - Type `(superopt NXp)` and Enter. It will synthesize the shortest possible implementation of NXp.
 - [lab1](http://htmlpreview.github.io/?https://github.com/taxic/ssft18/blob/master/rosette/lab1.html)
   - `warmup.rkt`
   - `sudoku.rkt`
-- slides: [01](rosette/ssft18L01.pdf)
-
+- [lab2](http://htmlpreview.github.io/?https://github.com/taxic/ssft18/blob/master/rosette/lab2.html)
+  - `shallow.rkt`
+  - `deep.rkt`
+- slides: [01](rosette/ssft18L01.pdf), [02](rosette/ssft18L02.pdf)
