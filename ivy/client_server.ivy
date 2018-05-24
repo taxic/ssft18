@@ -1,0 +1,40 @@
+#lang ivy1.7
+
+# clinet server example
+
+type client
+type server
+
+relation link(X: client, Y: server)
+relation semaphore(X: server)
+
+after init  {
+    semaphore(Y) := true;
+    link(X, Y) := false;
+}
+
+
+action connect(c: client, s: server) = {
+    require semaphore(s);
+    link(c, s) := true;
+    # link(c, s) := true;
+    # in this way, there is also a counterexample.
+    semaphore(s) := false;
+}
+
+action disconnect(c: client, s: server) = {
+    require link(c, s);
+    link(c, s) := false;
+    semaphore(s) := true;
+}
+
+export connect
+
+export disconnect
+# run `ivy_check trace=true diagnose=true debug=true client_server.ivy`
+# unique is a name.
+invariant [unique] forall C1, C2 : client, S: server. link(C1, S) & link(C2, S) -> C1 = C2
+
+# add this will fine.
+# run `ivy_check diagnose=true debug=true client_server.ivy`
+invariant [semaphore inv] forall C: client, S: server. link(C, S) -> ~semaphore(S)
