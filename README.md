@@ -9,6 +9,10 @@ Summer School for Formal Techniques
 
 ## Agda
 
+## [Ivy](http://microsoft.github.io/ivy/) (presented by [Mooly Sagiv](https://www.cs.tau.ac.il/~msagiv/))
+- `ivy_check` is installed in [ivy-vm](http://www.cs.tau.ac.il/~odedp/ivy-sri18.ova).
+- Run `ivy_check trace=true debug=true diagnose=true file.ivy`.
+
 ## Rosette (presented by [Emina Torlak](https://homes.cs.washington.edu/~emina/index.html))
 - Steps to run
   - Run `drracket` to open DrRacket window.
