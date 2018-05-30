@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+
+<title>Introduction to Agda</title>
+
+
+<style>
+			/* Accessible for screen readers but hidden from view */
+			.fa-hidden { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+			.rtl .fa-hidden { left:10000px; }
+			.fa-showtext { margin-right: 5px; }
+</style>
+
+
+<style type="text/css">a, #infinite-handle span {color:#65d0e5}a:hover {color: #0b99e0;}h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .entry-title {color: #f59100;}.navbar.navbar-default {background-color: #e5e5e5;}.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: #003264;}.dropdown-menu, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: #cfcfcf;}.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #003264;}#colophon {background-color: #e5e5e5;}.copyright {color: #003264;}.site-info a {color: #1dc4e5;}.entry-content {font-family: ; font-size:; font-weight: ; color:#ffffff;}.entry-content
+{
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+letter-spacing: 01px;
+font-weight:100;
+width:100%;
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+ {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+letter-spacing: 1px;
+font-weight:100;
+}
+
+nav a.external_icon {
+  background:none;
+}
+
+div.site-branding {
+float:left;
+}
+
+div.social-header {
+width:120px;
+position: absolute;
+top:0px;
+right:0px;
+z-index: 10;
+float:right;
+}
+
+div.social-header a.external_icon {
+background:none;
+}
+
+div.content-area {
+width:100%;
+}
+
+
+.site-title
+{
+font-size:30px;
+}
+
+.site-title a
+{
+color: #ffffff;
+}
+
+.site-description
+{
+color: #F59100;
+margin-bottom:0;
+}
+
+body a:visited
+{
+color: #62cbe2;
+}
+
+body a:hover
+{color: #62cbe2;}
+
+body a:focus
+{color: #62cbe2;}
+
+
+body label, body .label
+{color: #62cbe2;}
+
+.widget-wrap { background: white;}
+
+.widget-wrap img {height: 50px;margin: 10px 10px 10px 10px;}
+
+a.external:visited
+{color: #62cbe2;}
+
+div.infobox a, div.infobox a:visited, div.infobox a:hover, div.infobox a:focus {
+color: black;
+}
+
+
+.infoWindow h3
+{
+color: black;
+}
+
+.zeevat-table {
+ width:100%;
+}
+
+.zeevat-table
+ th {
+	background-color: #65d0e5;
+	color: black;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+	font-weight: 300;
+	font-size: 15px;
+	border: 1px solid #f9f9f9;
+        padding: 5px 10px 5px 10px;
+}
+
+.zeevat-table
+ td {
+	border: 1px solid #f9f9f9;
+        padding: 5px 10px 5px 10px;
+}
+
+.zeevat-day {
+width:10%;
+}
+
+.zeevat-time {
+width:12%;
+}
+
+.zeevat-content {
+width:78%;
+}
+
+
+footer
+{display:none; }
+
+code {
+background:none;
+font-weight:100;
+color:#FCCD41;
+}
+
+#MapAddressContainer p {
+    color:#003262;
+}
+</style>
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #023361; }
+</style>
+
+
+</head>
+
+<body class="page page-template-default custom-background">
+
+
+<div id="content" class="site-content container">
+<div class="row full-width">
+<div id="primary" class="content-area col-sm-12 col-md-8 full-width">
+<main id="main" class="site-main" role="main">
+
+<header class="entry-header page-header">
+<h1 class="entry-title">Introduction to Dependent Types and Agda
+</h1>
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+
+<h2><a href="http://fm.csl.sri.com/SSFT18/">8th Summer School on Formal Techniques</a></h2>
+
+<ul>
+<li>Lecturer: <a href="../index.html">Andreas Abel</a>
+<li>Course: Two lectures and two tutorial sections
+<li>Date: 21-25 May 2018
+<li>Place: Menlo College, Atherton, California, USA
+</ul>
+
+<h4>Abstract</h4>
+
+<p>Dependent types integrate programming with rich types, specifications, and verification into a single language. Dependent types allow to express arbitrary logical properties of programs, and correctness proofs can be woven into the code.
+<p>
+In this tutorial, I will give a brief introduction to dependent types and the dependently-typed language Agda developed at Chalmers. We will understand the theoretical concepts as we walk through some representative use cases. In the first part, we will learn how to elegantly represent binary search trees and their ordering invariant in Agda. In the second part, we will look at examples from programming language, like representation of expressions, evaluation, and equational reasoning.
+<p>
+The tutorial is accompanied by Agda programming and reasoning exercises.
+
+
+<h4>Material</h4>
+
+<ul>
+
+<li><a href="ssft18.pdf" class="external external_icon" target="_blank">Introductory slides</a></li>
+
+<li>Lecture 1:
+  <a href="lec1/Prelude.agda">Prelude.agda</a>
+  <a href="lec1/TreeSortOrd.agda">TreeSortOrd.agda</a>
+
+<li>Tutorial 1:
+  <a href="lec1/Exercises1.agda">Exercises1.agda</a>
+
+<li>Lecture 2: <a href="lec2/Lec2.zip">Lec2.zip</a>
+  <br/>
+  Individual files:
+  <a href="lec2/EqualityWithK.agda">EqualityWithK.agda</a>
+  <a href="lec2/EqualityWithoutK.agda">EqualityWithoutK.agda</a>
+  <a href="lec2/HelloWorld.agda">HelloWorld.agda</a>
+  <br/>
+  <a href="lec2/Everything.agda">Everything.agda</a>
+  <a href="lec2/IPL.agda">IPL.agda</a>
+  <a href="lec2/Interpretation.agda">Interpretation.agda</a>
+  <a href="lec2/Substitution.agda">Substitution.agda</a>
+  <a href="lec2/Normal.agda">Normal.agda</a>
+  <a href="lec2/Library.agda">Library.agda</a>
+  <a href="lec2/Library-stdlib.agda">Library-stdlib.agda</a>
+  <a href="lec2/Main.agda-lib">Main.agda-lib</a>
+
+<li>Tutorial 2:
+  <a href="lec2/Exercises2.agda">Exercises2.agda</a>
+
+</ul>
+
+<h4>Agda Installation</h4>
+
+<p>To follow the Agda exercises, please
+<a href="http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Download" class="external external_icon" target="_blank">install Agda</a>.
+For some systems, Agda might be packaged for easy installation (e.g. homebrew for Mac OS).
+In general, an <a href="http://hackage.haskell.org/package/Agda-2.5.1.1/readme" class="external external_icon" target="_blank">installation from source</a> should be possible by the following steps:</p>
+
+<ul>
+
+<li>Install the <code>emacs</code> editor (if it is not already on your system).</li>
+
+<li>On Linux/Ubuntu: install the required packages:
+<code><br/>
+apt-get install zlib1g-dev libncurses5-dev libicu-dev
+</code>
+<li><a href="https://github.com/agda/agda/issues/2449#issuecomment-278426558">On Mac OS X you might have to install the ICU libraries</a> for grapheme clusters via:
+<code><br/>
+brew install icu4c
+brew link icu4c --force
+</code>
+
+<li>Install the GHC Haskell compiler with the <code>cabal</code> build system, preferably by getting the latest <a href="https://www.haskell.org/platform/" class="external external_icon" target="_blank">Haskell Platform</a>.</li>
+
+<li>Add <code>$HOME/.cabal/bin</code> to your PATH (or wherever cabal will install binaries on your system).</li>
+
+<li>Install the latest versions of <code>cabal-install</code>, <code>cpphs</code>, <code>alex</code>, and <code>happy</code> from <a href="http://hackage.haskell.org/" class="external external_icon" target="_blank">hackage</a>.<code><br />
+cabal update<br />
+cabal install cabal-install<br />
+cabal install cpphs<br />
+cabal install alex<br />
+cabal install happy<br />
+</code></li>
+
+<li>Install the latest version of Agda from hackage.<code><br />
+cabal install Agda<br />
+agda-mode setup<br />
+</code></li>
+
+<li>The last command adds a search path to the emacs <code>agda2-mode.el</code> to your <code>.emacs</code> file.<br />
+Launch emacs and open a new file <code>HelloWorld.agda</code>.</li>
+
+<li>Type in your first Agda code:<code><br />
+module HelloWorld where<br />
+</code></li>
+
+<li>Check the file with Agda by pressing <code>C-c C-l</code> (Control-c Control-l) or selecting &#8220;Load File&#8221; from the Agda menu.</li>
+
+<li>Optionally also install the Agda <a href="https://github.com/agda/agda-stdlib">standard library.</a>
+</ul>
+
+<!--
+<h4>Further Lecture Material</h4>
+
+<ul>
+<li><a href="exercises.pdf">Exercises</a></li>
+<li><a href="PropositionalLogicInLF.agda" class="external external_icon" target="_blank">An LF representation of propositional logic</a> in Agda</li>
+<li>An LF representation of first-order logic in Twelf:
+<a href="FOL.elf" class="external external_icon" target="_blank">FOL.elf</a>
+<a href="sources.cfg" class="external external_icon" target="_blank">Sources.cfg</a>
+<li>Scriptum for <a href="lecture1-nd.pdf" class="external external_icon" target="_blank">Natural Deduction and the Curry-Howard Isomorphism</a></li>
+</li>
+</ul>
+-->
+
+<h4>Agda tutorials</h4>
+
+See <a href="http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Othertutorials">list of tutorials</a> on the Agda wiki, for instance:
+
+<ul>
+<li> Ulf Norell and James Chapman. <a href="http://www.cse.chalmers.se/~ulfn/papers/afp08/tutorial.pdf">Dependently Typed Programming in Agda</a>. This is aimed at functional programmers.
+<li> Ana Bove and Peter Dybjer. <a href="http://www.cse.chalmers.se/~peterd/papers/DependentTypesAtWork.pdf">Dependent Types at Work</a>. A gentle introduction including logic and proofs of programs.
+</ul>
+
+<h4>Literature on Type Theory</h4>
+
+This is a non-representative selection of literature, more focused on the metatheory of type theory rather than the use of type theory for verification.
+
+<ul>
+
+<li>Per Martin-Löf. <a href="http://www.sciencedirect.com/science/article/pii/S0049237X08719451" class="external external_icon" target="_blank">An intuitionistic theory of types: Predicative part</a>. In Logic Colloquium ‘73, pages 73–118. North-Holland, 1975</li>
+
+<li>Bengt Nordström, Kent Petersson, and Jan M. Smith. <a href="http://www.cse.chalmers.se/research/group/logic/book/book.pdf" class="external external_icon" target="_blank">Programming in Martin Löf ’s Type Theory: An Introduction.</a> Clarendon Press, Oxford, 1990</li>
+
+<li>Benjamin C. Pierce. <a href="https://www.cis.upenn.edu/~bcpierce/tapl/" class="external external_icon" target="_blank">Types and Programming Languages.</a> MIT Press, 2002</li>
+
+<li>Jean-Yves Girard, Yves Lafont, and Paul Taylor. <a href="http://www.paultaylor.eu/stable/prot.pdf" class="external external_icon" target="_blank">Proofs and Types</a>, volume 7 of Cambridge Tracts in Theoret. Comput. Sci. Cambridge University Press, 1989</li>
+
+<li>Andreas Abel. <a href="http://www.cse.chalmers.se/~abel/habil.pdf" class="external external_icon" target="_blank">Normalization by Evaluation: Dependent Types and Impredicativity</a>. Unpublished, 2013. Habilitation thesis, Faculty for Mathematics, Informatics, and Statistics (MIST), Ludwig-Maximilians-University Munich</li>
+
+<li>Andreas Abel, Thierry Coquand, and Peter Dybjer. <a href="http://www.cse.chalmers.se/~abel/lics07.pdf" class="external external_icon" target="_blank">Normalization by evaluation for Martin-Löf Type Theory with typed equality judgements</a>. In Proc. of the 22nd IEEE Symp. on Logic in Computer Science (LICS 2007), pages 3–12. IEEE Computer Soc. Press, 2007</li>
+
+<li>Andreas Abel and Gabriel Scherer. <a href="http://www.cse.chalmers.se/~abel/types10.pdf" class="external external_icon" target="_blank">On irrelevance and algorithmic equality in predicative type theory.</a> Logical Meth. in Comput. Sci., 8(1:29):1–36, 2012. TYPES’10 special issue</li>
+
+</ul>
+
+</div><!-- .entry-content -->
+</main><!-- #main -->
+</div><!-- #primary -->
+</div><!-- row -->
+</div><!-- #content -->
+</div><!-- #page -->
+
+
+</body>
+</html>
