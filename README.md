@@ -8,6 +8,7 @@ Summer School for Formal Techniques
 - Run `coqide &` and open `coq/*.v` files for exercises. 
 
 ## [Agda](http://www.cse.chalmers.se/~abela/ssft18/index.html) (presented by Andreas Abel)
+- Agda formalization of Categories: https://github.com/InitialTypes/Club (suggested by Abel)
 
 ## [Ivy](http://microsoft.github.io/ivy/) (presented by [Mooly Sagiv](https://www.cs.tau.ac.il/~msagiv/))
 - `ivy_check` is installed in [ivy-vm](http://www.cs.tau.ac.il/~odedp/ivy-sri18.ova).
