@@ -1,1 +1,5 @@
 *.rkt~
+*.agda#
+*.agdai
+agda/.#*
+*.DS_Store
