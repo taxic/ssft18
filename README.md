@@ -42,3 +42,8 @@ Summer School for Formal Techniques
 - [Tutorial](https://wiki.haskell.org/State_Monad)
 
 ## [Clojure](https://clojure.org/)
+
+## Prolog ([SWI Prolog](http://www.swi-prolog.org/pldoc/man?section=quickstart))
+
+- `swipl graph.pl` or `swipl sudoku.pl`
+- To exit: `?- halt.`
